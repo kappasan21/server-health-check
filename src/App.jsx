@@ -40,7 +40,7 @@ function App() {
         </li>
       </ul>
 
-      <a id="link-to-login" href={authURL + '/login'}>To Login Page</a>
+      <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a>
     </div>
   );
 }
