@@ -3,6 +3,12 @@ import './App.css'
 import { checkAuthServerStatus, checkDbStatus } from './components/api-requests';
 
 
+
+// Server URL
+// const authURL = 'http://localhost:3111';
+
+
+
 function App() {
 
   const [authServerStatus, setAuthServerStatus] = useState(false);
@@ -21,13 +27,20 @@ function App() {
     <div>
       <h1>Servers Health Check</h1>
       <div className='recommendation-msg'>
-        <p>The server and database are currently in sleep mode. Please go to the login page once they are active again.</p>
+        <p>The server and database are usually in sleep mode.  So, please make sure that they are active by checking status below before visiting Login Page.</p>
       </div>
       <ul>
-        <li>Authentication Server on Render: {authServerStatus ? '🟢' : '🔴'}</li>
-        <li>DB for Authentication Server on Supabase: {dbStatus ? '🟢' : '🔴'}</li>
+        <li>
+          <p>Authentication Server on Render: </p>
+          <p className="current-status">{authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
+        </li>
+        <li>
+          <p>DB for Authentication Server on Supabase: </p>
+          <p className="current-status">{dbStatus ? '🟢 Active' : '🔴 Sleep'}</p>
+        </li>
       </ul>
-      <a id="link-to-login" href="https://auth-server-g01-0-9.onrender.com/login?Logged_out_successfully">To Login Page</a>
+
+      <a id="link-to-login" href="https://auth-server-g01-0-9.onrender.com">To Login Page</a>
     </div>
   );
 }

@@ -7,17 +7,34 @@
 
 #link-to-login {
   font-size: 2rem;
+  padding: 1rem 2rem;
+  background-color: lightgray;
+  border-radius: 10px;
 }
 
 ul {
   /* list-style: none; */
   text-align: left;
-  max-width: 30vw;
-  margin: 0 auto 2rem auto;
+  max-width: 45vw;
+  margin: 0 auto 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.current-status {
+  font-weight: bold;
 }
 
 .recommendation-msg {
-  max-width: 35vw;
+  max-width: 45vw;
   margin: 0 auto;
   text-align: left;
   text-decoration: underline;
