@@ -6,7 +6,7 @@ import { checkAuthServerStatus, checkDbStatus } from './components/api-requests'
 
 // Server URL
 // const authURL = 'http://localhost:3111';
-
+const authURL = "https://auth-server-g01-0-9.onrender.com";
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
         </li>
       </ul>
 
-      <a id="link-to-login" href="https://auth-server-g01-0-9.onrender.com">To Login Page</a>
+      <a id="link-to-login" href={authURL + '/login'}>To Login Page</a>
     </div>
   );
 }
