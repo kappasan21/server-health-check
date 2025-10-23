@@ -38,7 +38,7 @@ function App() {
         <p>The server and database are usually in sleep mode.  So, please make sure that they are active by checking status below before visiting Login Page.</p>
       </div>
       <ul>
-        <h2 className="app-title">App groups with Auth Server</h2>
+        <a href={authURL + '/login'} target="_blank"><h2 className="app-title">App groups with Auth Server</h2></a>
         <li>
           <p>Authentication Server on Render: </p>
           <p className="current-status">{authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
@@ -54,7 +54,7 @@ function App() {
         <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
       </ul>
 
-      <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a>
+      {/* <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a> */}
     </div >
   );
 }
