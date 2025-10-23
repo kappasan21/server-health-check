@@ -26,7 +26,7 @@ function App() {
     // Weather report app server status check
     checkWeatherServerStatus().then((status) => {
       setWeatherServerStatus(status);
-    })
+    });
 
   }, []);
 
