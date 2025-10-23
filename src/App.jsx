@@ -49,9 +49,11 @@ function App() {
         </li>
       </ul>
       <ul>
-        <a href={weatherClientURL} target="_blank"><h2 className="app-title">Weather Report App</h2></a>
-        <p>Weather Report Server: </p>
-        <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
+        <li>
+          <a href={weatherClientURL} target="_blank"><h2 className="app-title">Weather Report App</h2></a>
+          <p>Weather Report Server: </p>
+          <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
+        </li>
       </ul>
 
       {/* <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a> */}
