@@ -7,6 +7,7 @@ import { checkAuthServerStatus, checkDbStatus, checkWeatherServerStatus } from '
 // Server URL
 // const authURL = 'http://localhost:3111';
 const authURL = "https://auth-server-g01-0-9.onrender.com";
+const weatherClientURL = "https://weather-report-api-client.netlify.app";
 
 
 function App() {
@@ -48,13 +49,13 @@ function App() {
         </li>
       </ul>
       <ul>
-        <h2 className="app-title">Weather Report App</h2>
+        <a href={weatherClientURL} target="_blank"></a><h2 className="app-title">Weather Report App</h2>
         <p>Weather Report Server: </p>
         <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
       </ul>
 
       <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a>
-    </div>
+    </div >
   );
 }
 
