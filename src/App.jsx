@@ -13,14 +13,21 @@ function App() {
 
   const [authServerStatus, setAuthServerStatus] = useState(false);
   const [dbStatus, setDbStatus] = useState(false);
+  const [weatherServerStatus, setWeatherServerStatus] = useState(false);
 
   useEffect(() => {
+    // App groups with Auth server and DB status check
     checkAuthServerStatus().then((status) => {
       setAuthServerStatus(status);
     });
     checkDbStatus().then((status) => {
       setDbStatus(status);
     });
+    // Weather report app server status check
+    checkWeatherServerStatus().then((status) => {
+      setWeatherServerStatus(status);
+    })
+
   }, []);
 
   return (
@@ -30,6 +37,7 @@ function App() {
         <p>The server and database are usually in sleep mode.  So, please make sure that they are active by checking status below before visiting Login Page.</p>
       </div>
       <ul>
+        <h2 className="app-title">App groups with Auth Server</h2>
         <li>
           <p>Authentication Server on Render: </p>
           <p className="current-status">{authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
@@ -38,6 +46,11 @@ function App() {
           <p>DB for Authentication Server on Supabase: </p>
           <p className="current-status">{dbStatus ? '🟢 Active' : '🔴 Sleep'}</p>
         </li>
+      </ul>
+      <ul>
+        <h2 className="app-title">Weather Report App</h2>
+        <p>Weather Report Server: </p>
+        <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
       </ul>
 
       <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a>
