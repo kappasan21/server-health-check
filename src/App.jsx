@@ -49,8 +49,8 @@ function App() {
         </li>
       </ul>
       <ul>
+        <a href={weatherClientURL} target="_blank"><h2 className="app-title">Weather Report App</h2></a>
         <li>
-          <a href={weatherClientURL} target="_blank"><h2 className="app-title">Weather Report App</h2></a>
           <p>Weather Report Server: </p>
           <p className="current-status">{weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
         </li>
