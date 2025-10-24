@@ -16,7 +16,7 @@ ul {
   /* list-style: none; */
   text-align: left;
   max-width: 45vw;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 2rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
