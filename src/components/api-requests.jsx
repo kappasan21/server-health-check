@@ -5,7 +5,7 @@ import axios from 'axios';
 // URLs 
 const authURL = 'https://auth-server-g01-0-9.onrender.com';
 const weatherSvrURL = 'https://weatherapi-svr.onrender.com';
-
+const spotifySvrURL = "https://spotify-search-server.onrender.com";
 
 
 
@@ -52,3 +52,22 @@ export async function checkWeatherServerStatus() {
     return false;
   }
 }
+
+
+export async function checkSpotifyServerStatus() {
+  try {
+    const result = await axios.get(spotifySvrURL);
+    let status = false;
+    console.log("Response from the server: ", result);
+    if (result) {
+      status = true;
+    } else {
+      status = false;
+    }
+
+    return status;
+  } catch (error) {
+    console.error("System Error while getting server status: ", error);
+    return false;
+  }
+};

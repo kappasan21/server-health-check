@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { checkAuthServerStatus, checkDbStatus, checkWeatherServerStatus } from './components/api-requests';
+import { checkAuthServerStatus, checkDbStatus, checkWeatherServerStatus, checkSpotifyServerStatus } from './components/api-requests';
 
 
 
@@ -9,6 +9,7 @@ import { checkAuthServerStatus, checkDbStatus, checkWeatherServerStatus } from '
 const authURL = "https://auth-server-g01-0-9.onrender.com";
 const weatherClientURL = "https://weather-report-api-client.netlify.app";
 const recipeFinderURL = "https://iridescent-chebakia-845fb8.netlify.app";
+const spotifySearchURL = "https://spotify-search-client.netlify.app";
 
 
 function App() {
@@ -61,6 +62,13 @@ function App() {
         <li>
           <p>Recipe Finder Server: </p>
           <p className="current-status">🟢 Active</p>
+        </li>
+      </ul>
+      <ul>
+        <a href={spotifySearchURL} target='_blank'><h2 className="app-title">Spotify Music Search App</h2></a>
+        <li>
+          <p>Spotify Music Search Server: </p>
+          <p className="current-status">{checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
         </li>
       </ul>
 
