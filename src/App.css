@@ -60,6 +60,12 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.status-list-section ul {
+  background-color: lightgray;
+  width: 80vw;
 }
 
 @keyframes logo-spin {
