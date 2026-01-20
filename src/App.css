@@ -66,6 +66,8 @@ li {
 .status-list-section ul {
   background-color: lightgray;
   width: 80vw;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .status-list-section p {
