@@ -61,7 +61,6 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 
 .status-list-section ul {
@@ -69,7 +68,6 @@ li {
   width: 80vw;
   padding: 1rem;
   border-radius: 10px;
-  line-height: 1.2rem;
 }
 
 .status-list-section p {
