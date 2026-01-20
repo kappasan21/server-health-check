@@ -15,7 +15,7 @@
 ul {
   /* list-style: none; */
   text-align: left;
-  max-width: 45vw;
+  /* max-width: 45vw; */
   margin: 0 auto 2rem auto;
   display: flex;
   flex-direction: column;
