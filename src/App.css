@@ -34,7 +34,8 @@ li {
 }
 
 .recommendation-msg {
-  max-width: 45vw;
+  /* max-width: 45vw; */
+  max-width: 70vw;
   margin: 0 auto;
   text-align: left;
   text-decoration: underline;
