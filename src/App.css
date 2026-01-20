@@ -68,6 +68,10 @@ li {
   width: 80vw;
 }
 
+.status-list-section p {
+  text-align: left;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
