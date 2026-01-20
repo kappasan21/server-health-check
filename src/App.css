@@ -69,6 +69,7 @@ li {
   width: 80vw;
   padding: 1rem;
   border-radius: 10px;
+  line-height: 1.5rem;
 }
 
 .status-list-section p {
