@@ -1,22 +1,22 @@
 #root {
-  /* max-width: 1280px; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
   margin: 0 auto;
-  padding: 2rem;
+}
+
+
+
+.main-container {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
 }
 
-#link-to-login {
-  font-size: 2rem;
-  padding: 1rem 2rem;
-  background-color: lightgray;
-  border-radius: 10px;
-}
 
 ul {
-  /* list-style: none; */
   text-align: left;
-  /* max-width: 45vw; */
-  margin: 0 auto 2rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,8 +34,6 @@ li {
 }
 
 .recommendation-msg {
-  /* max-width: 45vw; */
-  max-width: 70vw;
   margin: 0 auto;
   text-align: left;
   text-decoration: underline;
@@ -65,7 +63,7 @@ li {
 
 .status-list-section ul {
   background-color: lightgray;
-  width: 80vw;
+  width: 100%;
   padding: 1rem;
   border-radius: 10px;
   line-height: 1.2rem;
@@ -73,28 +71,4 @@ li {
 
 .status-list-section p {
   text-align: left;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

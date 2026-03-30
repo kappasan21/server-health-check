@@ -51,7 +51,7 @@ export async function checkWeatherServerStatus() {
     console.error('Error checking weather server status: ', error);
     return false;
   }
-}
+};
 
 
 export async function checkSpotifyServerStatus() {
