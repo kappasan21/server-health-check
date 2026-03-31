@@ -14,7 +14,7 @@ import {
   auctionAppURL,
   recipeSearchURL,
 } from './lib/urlList';
-import { appList } from './components/appList';
+import { appList } from './lib/appList';
 
 
 
@@ -113,6 +113,7 @@ function App() {
           <li>
             <a href={recipeFinderURL} target="_blank">
               <h2 className="app-title">{appList[2].mainTitle}</h2>
+              <p>Simple Recipe Finder App with React and Node.js. User can search for recipes and ingredients by searching keywords or choosing category.</p>
             </a>
             <div>
               <p className='current-status'>

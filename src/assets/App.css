@@ -93,7 +93,7 @@ li p {
 }
 
 .status-list-section ul {
-  background-color: lightgray;
+  /* background-color: lightgray; */
   width: 100%;
   padding: 1rem;
   border-radius: 10px;
