@@ -12,7 +12,7 @@ export const appList = [
   {
     id: 1,
     mainTitle: 'Auth Server App',
-    mainUrl: authURL + '/login',
+    mainUrl: authURL,
     aiDev: null,
     descriptions: 'Authentication Server. Once logged in, you can access sample Recipe App, Task Management App, Web Store App, Restaurant App. Some of them may take serveral minutes to wake up DBs.The auth server is built with html, css, ejs, and node.js. Other apps with the auth server built with React for clients and Node.js of servers.',
     clientUrl: null,
