@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { authURL, weatherClientURL, spotifySearchURL } from '../lib/ulrList';
+import { authURL, weatherClientURL, spotifySearchURL } from '../lib/urlList';
 
 
 

@@ -13,8 +13,8 @@ import {
   spotifySearchURL,
   auctionAppURL,
   recipeSearchURL,
-} from './lib/ulrList';
-import { appList } from './components/applist';
+} from './lib/urlList';
+import { appList } from './components/appList';
 
 
 

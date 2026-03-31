@@ -4,8 +4,7 @@ import {
   recipeFinderURL,
   spotifySearchURL, 
   auctionAppURL,
-} from '../lib/ulrList';
-
+} from '../lib/urlList';
 
 
 export const appList = [
