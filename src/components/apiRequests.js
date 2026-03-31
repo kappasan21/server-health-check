@@ -1,11 +1,6 @@
 import axios from 'axios';
+import { authURL, weatherClientURL, spotifySearchURL } from '../lib/ulrList';
 
-
-
-// URLs 
-const authURL = 'https://auth-server-g01-0-9.onrender.com';
-const weatherSvrURL = 'https://weatherapi-svr.onrender.com';
-const spotifySvrURL = "https://spotify-search-server.onrender.com";
 
 
 
@@ -41,7 +36,7 @@ export async function checkDbStatus() {
 
 export async function checkWeatherServerStatus() {
   try {
-    const weatherSvrCheck = await axios.get(weatherSvrURL + '/test/connection');
+    const weatherSvrCheck = await axios.get(weatherClientURL + '/test/connection');
     if (weatherSvrCheck.data) {
       return true;
     } else {
@@ -56,7 +51,7 @@ export async function checkWeatherServerStatus() {
 
 export async function checkSpotifyServerStatus() {
   try {
-    const result = await axios.get(spotifySvrURL);
+    const result = await axios.get(spotifySearchURL);
     let status = false;
     console.log("Response from the server: ", result);
     if (result) {
