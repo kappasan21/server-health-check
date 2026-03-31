@@ -22,7 +22,7 @@ function App() {
           {appList.map((app, idx) => (
             <li key={idx}>
               <div className="app-header">
-                <a href={app.clientUrl} target="_blank">
+                <a href={app.mainUrl} target="_blank">
                   <h2 className="app-title">{app.mainTitle}</h2>
                   <h3 className="ai-dev">AI Dev Tool: {app.aiDev || 'None'}</h3>
                 </a>
