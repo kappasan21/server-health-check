@@ -1,14 +1,38 @@
 import './assets/App.css';
 import { appList } from './lib/appList';
 import {
+  checkClientStatus,
   checkServerStatus,
   checkDbStatus,
 } from './components/api';
+import { useState, useEffect, } from 'react';
+
 
 
 
 function App() {
+  // Assign applist to state to trigger re-render when server status is updated
+  const [clientStatusList, setClientStatusList] = useState([]);
+  const [serverStatuses, setServerStatuses] = useState([]);
+  const [dbStatuses, setDbStatuses] = useState([]);
 
+  useEffect(() => {
+    async function checkStatuses() {
+      const clientStatusResults = await Promise.all(appList.map(app => checkClientStatus(app.clientUrl)));
+      const serverStatusResults = await Promise.all(appList.map(app => checkServerStatus(app.serverUrl)));
+      const dbStatusResults = await Promise.all(appList.map(app => checkDbStatus(app.dbUrl)));
+      console.warn("!!!!Client Status Results:", clientStatusResults);
+      setClientStatusList(clientStatusResults);
+      setServerStatuses(serverStatusResults);
+      setDbStatuses(dbStatusResults);
+    };
+    checkStatuses();
+    console.log("Client Status List:", clientStatusList);
+    console.log("Server Status List:", serverStatuses);
+    console.log("DB Status List:", dbStatuses);
+  }, []);
+
+  // JSX
   return (
     <div className="main-container">
       <h1>Apps Health Check</h1>
@@ -32,19 +56,19 @@ function App() {
 
                 <div className="app-status">
                   <p className='current-status'>
-                    App/Client: {app.clientUrl
-                      ? '🟢 Active'
-                      : 'ー None'}
+                    App/Client: {app.clientUrl === null ? 'ー None' : '🟢 Active'
+                      // (clientStatusList[idx] === true ? '🟢 Active' : '🔴 Sleep')
+                    }
                   </p>
                   <p className="current-status">
                     Server: {app.serverUrl === null ? 'ー None' :
-                      checkServerStatus(app.serverUrl) === true
+                      serverStatuses[idx] === true
                         ? '🟢 Active'
                         : '🔴 Sleep'}
                   </p>
                   <p className="current-status">
                     DB: {app.dbUrl === null ? 'ー None' :
-                      checkDbStatus(app.dbUrl) === true
+                      dbStatuses[idx] === true
                         ? '🟢 Active'
                         : '🔴 Sleep'}
                   </p>
