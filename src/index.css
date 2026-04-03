@@ -75,6 +75,10 @@ button:focus-visible {
 }
 
 @media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
   body {
     text-align: center;
     width: 80vw;
