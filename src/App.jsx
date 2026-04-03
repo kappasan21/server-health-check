@@ -17,7 +17,7 @@ const authURL = "https://auth-server-g01-0-9.onrender.com";
 const weatherClientURL = "https://weather-report-api-client.netlify.app";
 const recipeFinderURL = "https://iridescent-chebakia-845fb8.netlify.app";
 const spotifySearchURL = "https://spotify-search-client.netlify.app";
-
+const auctionURL = "https://auction-app-m35w.vercel.app";
 
 
 function App() {
@@ -45,7 +45,6 @@ function App() {
     <main>
       <h1>Servers Health Check</h1>
 
-      {/* <div className="main-container"> */}
       <div className={styles.mainContainer}>
         <div className={styles.recommendationMsg}>
           <p>The server and database are usually in sleep mode.</p>
@@ -67,6 +66,17 @@ function App() {
                 <p>DB for Authentication Server on Supabase: </p>
                 <p className="current-status">
                   {dbStatus ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <a href={auctionURL} target="_blank">
+                <h2 className="app-title">Auction App Built with Cursor</h2></a>
+              <div>
+                <p>Auction Site built with Cursor: </p>
+                <p className="current-status">
+                  🟢 Active
                 </p>
               </div>
             </li>

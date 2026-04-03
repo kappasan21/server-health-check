@@ -12,9 +12,11 @@
   box-sizing: border-box;
 }
 
+
 main {
   height: 100vh;
   background-color: ivory;
+  margin: 0 auto;
 }
 
 h1 {
@@ -25,6 +27,8 @@ h1 {
 
 ul {
   list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 li {

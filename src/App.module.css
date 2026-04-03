@@ -6,6 +6,11 @@
   border-radius: 10px;
 }
 
+.recommendationMsg {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .recommendationMsg p {
   text-decoration: underline;
 }
