@@ -1,0 +1,46 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --header-color1: rgb(95, 78, 244);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  background-color: ivory;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 2rem;
+  color: var(--header-color1);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border: 1px solid var(--header-color1);
+  border-radius: 10px;
+  margin: 1rem auto;
+  padding: .5rem 2rem;
+}
+
+li div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  color: var(--header-color1);
+  cursor: pointer;
+}

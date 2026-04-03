@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import './App.css'
+// import './App.css'
 import {
   checkAuthServerStatus,
   checkDbStatus,
   checkWeatherServerStatus,
   checkSpotifyServerStatus
 } from './components/api-requests';
+
+import styles from './App.module.css';
 
 
 
@@ -40,66 +42,72 @@ function App() {
   }, []);
 
   return (
-    <div className="main-container">
+    <main>
       <h1>Servers Health Check</h1>
 
-      <div className='recommendation-msg'>
-        <p>The server and database are usually in sleep mode.  So, please make sure that they are active by checking status below before visiting Login Page.</p>
-      </div>
+      {/* <div className="main-container"> */}
+      <div className={styles.mainContainer}>
+        <div className={styles.recommendationMsg}>
+          <p>The server and database are usually in sleep mode.</p>
+          <p>So, please make sure that they are active by checking status below before visiting Login Page.</p>
+        </div>
 
-      <div className="status-list-section">
-        <ul>
-          <a href={authURL + '/login'} target="_blank">
-            <h2 className="app-title">App group with Auth Server</h2>
-          </a>
-          <li>
-            <p>Authentication Server on Render: </p>
-            <p className="current-status">
-              {authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
-          </li>
-          <li>
-            <p>DB for Authentication Server on Supabase: </p>
-            <p className="current-status">
-              {dbStatus ? '🟢 Active' : '🔴 Sleep'}
-            </p>
-          </li>
-        </ul>
+        <div className="status-list-section">
+          <ul>
+            <li>
+              <a href={authURL + '/login'} target="_blank">
+                <h2 className="app-title">App group with Auth Server</h2>
+              </a>
+              <div>
+                <p>Authentication Server on Render: </p>
+                <p className="current-status">
+                  {authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
+              </div>
+              <div>
+                <p>DB for Authentication Server on Supabase: </p>
+                <p className="current-status">
+                  {dbStatus ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+              </div>
+            </li>
 
-        <ul>
-          <a href={weatherClientURL} target="_blank">
-            <h2 className="app-title">Weather Report App</h2></a>
-          <li>
-            <p>Weather Report Server: </p>
-            <p className="current-status">
-              {weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}
-            </p>
-          </li>
-        </ul>
+            <li>
+              <a href={weatherClientURL} target="_blank">
+                <h2 className="app-title">Weather Report App</h2></a>
+              <div>
+                <p>Weather Report Server: </p>
+                <p className="current-status">
+                  {weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+              </div>
+            </li>
 
-        <ul>
-          <a href={recipeFinderURL} target="_blank">
-            <h2 className="app-title">Recipe Finder App</h2></a>
-          <li>
-            <p>Recipe Finder Server: </p>
-            <p className="current-status">🟢 Active</p>
-          </li>
-        </ul>
+            <li>
+              <a href={recipeFinderURL} target="_blank">
+                <h2 className="app-title">Recipe Finder App</h2></a>
+              <div>
+                <p>Recipe Finder Server: </p>
+                <p className="current-status">🟢 Active</p>
+              </div>
+            </li>
 
-        <ul>
-          <a href={spotifySearchURL} target='_blank'>
-            <h2 className="app-title">Spotify Music Search App</h2>
-          </a>
-          <li>
-            <p>Spotify Music Search Server: </p>
-            <p className="current-status">
-              {checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'}
-            </p>
-          </li>
-        </ul>
-      </div>
+            <li>
+              <a href={spotifySearchURL} target='_blank'>
+                <h2 className="app-title">Spotify Music Search App</h2>
+              </a>
+              <div>
+                <p>Spotify Music Search Server: </p>
+                <p className="current-status">
+                  {checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-      {/* <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a> */}
-    </div >
+        {/* <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a> */}
+      </div >
+    </main>
   );
 };
 

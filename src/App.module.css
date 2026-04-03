@@ -1,0 +1,11 @@
+.mainContainer {
+  /* background-color: lightgray; */
+  width: 80vw;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.recommendationMsg p {
+  text-decoration: underline;
+}
