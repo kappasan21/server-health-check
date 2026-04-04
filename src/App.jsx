@@ -47,7 +47,7 @@ function App() {
 
       <div className={styles.mainContainer}>
         <div className={styles.recommendationMsg}>
-          <p>The server and database are usually in sleep mode.</p>
+          <p>The servers and databases are usually in sleep mode.</p>
           <p>So, please make sure that they are active by checking status below before visiting Login Page.</p>
         </div>
 
