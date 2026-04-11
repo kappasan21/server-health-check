@@ -6,6 +6,7 @@ import axios from 'axios';
 const authURL = 'https://auth-server-g01-0-9.onrender.com';
 const weatherSvrURL = 'https://weatherapi-svr.onrender.com';
 const spotifySvrURL = "https://spotify-search-server.onrender.com";
+const restaurantSvrURL = "https://restaurant-server-gxnx.onrender.com";
 
 
 
@@ -23,7 +24,7 @@ export async function checkAuthServerStatus() {
   }
 };
 
-
+// db-check path for auth server
 export async function checkDbStatus() {
   try {
     const dbCheck = await axios.get(authURL + '/db-connection-test');
@@ -34,6 +35,20 @@ export async function checkDbStatus() {
     }
   } catch (error) {
     console.error('Error checking db status: ', error);
+    return false;
+  }
+};
+// db-check for other servers
+export async function dbStatusCheck() {
+  try {
+    const response = await axios.get(restaurantSvrURL + '/db-check');
+    if (response.data) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (err) {
+    console.error('Error checking db status: ', err);
     return false;
   }
 };

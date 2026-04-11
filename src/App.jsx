@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 // import './App.css'
 import {
   checkAuthServerStatus,
-  checkDbStatus,
+  // checkDbStatus,
   checkWeatherServerStatus,
-  checkSpotifyServerStatus
+  checkSpotifyServerStatus,
+  dbStatusCheck,
 } from './components/api-requests';
 
 import styles from './App.module.css';
@@ -23,21 +24,26 @@ const auctionURL = "https://auction-app-m35w.vercel.app";
 function App() {
 
   const [authServerStatus, setAuthServerStatus] = useState(false);
-  const [dbStatus, setDbStatus] = useState(false);
+  // const [dbStatus, setDbStatus] = useState(false);
   const [weatherServerStatus, setWeatherServerStatus] = useState(false);
+  const [dbConnection, setDbConnection] = useState(false);
 
   useEffect(() => {
     // App groups with Auth server and DB status check
     checkAuthServerStatus().then((status) => {
       setAuthServerStatus(status);
     });
-    checkDbStatus().then((status) => {
-      setDbStatus(status);
-    });
+    // checkDbStatus().then((status) => {
+    //   setDbStatus(status);
+    // });
     // Weather report app server status check
     checkWeatherServerStatus().then((status) => {
       setWeatherServerStatus(status);
     });
+    // Restaurant DB check - which is the same location with auth server
+    dbStatusCheck().then((status) => {
+      setDbConnection(status);
+    })
 
   }, []);
 
@@ -65,7 +71,12 @@ function App() {
               <div>
                 <p>DB for Authentication Server on Supabase: </p>
                 <p className="current-status">
-                  {dbStatus ? '🟢 Active' : '🔴 Sleep'}
+                  {
+                    // dbStatus
+                    dbConnection
+                      ? '🟢 Active'
+                      : '🔴 Sleep'
+                  }
                 </p>
               </div>
             </li>
