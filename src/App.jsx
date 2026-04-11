@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 // import './App.css'
 import {
   checkAuthServerStatus,
-  // checkDbStatus,
+  checkDbStatus,
   checkWeatherServerStatus,
   checkSpotifyServerStatus,
   dbStatusCheck,
@@ -24,7 +24,7 @@ const auctionURL = "https://auction-app-m35w.vercel.app";
 function App() {
 
   const [authServerStatus, setAuthServerStatus] = useState(false);
-  // const [dbStatus, setDbStatus] = useState(false);
+  const [dbStatus, setDbStatus] = useState(false);
   const [weatherServerStatus, setWeatherServerStatus] = useState(false);
   const [dbConnection, setDbConnection] = useState(false);
 
@@ -33,9 +33,9 @@ function App() {
     checkAuthServerStatus().then((status) => {
       setAuthServerStatus(status);
     });
-    // checkDbStatus().then((status) => {
-    //   setDbStatus(status);
-    // });
+    checkDbStatus().then((status) => {
+      setDbStatus(status);
+    });
     // Weather report app server status check
     checkWeatherServerStatus().then((status) => {
       setWeatherServerStatus(status);
@@ -72,8 +72,8 @@ function App() {
                 <p>DB for Authentication Server on Supabase: </p>
                 <p className="current-status">
                   {
-                    // dbStatus
-                    dbConnection
+                    dbStatus
+                      // || dbConnection
                       ? '🟢 Active'
                       : '🔴 Sleep'
                   }
