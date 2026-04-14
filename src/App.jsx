@@ -55,61 +55,59 @@ function App() {
           <p>So, please make sure that they are active by checking status below before visiting Login Page.</p>
         </div>
 
-        <div className="status-list-section">
+        <div className={styles.statusListSection}>
           <ul>
-            <li>
+            <li className={styles.appGroupSection}>
               <a href={authURL + '/login'} target="_blank">
-                <h2 className="app-title">App group with Auth Server</h2>
+                <h2 className={styles.appTitle}>App group with Auth Server</h2>
               </a>
-              <div>
+
+              <div className={styles.authServerStatusSection}>
                 <p>Authentication Server on Render: </p>
-                <p className="current-status">
+                <p className={styles.currentStatus}>
                   {authServerStatus ? '🟢 Active' : '🔴 Sleep'}</p>
               </div>
-              <div>
-                <p>DB for Authentication Server on Supabase: </p>
-                <ul>
-                  <li>
-                    <p className="current-status">
-                      {/* {
-                    dbStatus
-                      // || dbConnection
-                      ? '🟢 Active'
-                      : '🔴 Sleep'
-                  } */}
-                      dbStatus: {detailStatus.users ? '🟢 Active' : '🔴 Sleep'}
-                    </p>
-                  </li>
-                  <li>
-                    <p className="current-status">
-                      location: {detailStatus.location ? '🟢 Active' : '🔴 Sleep'}
-                    </p>
-                  </li>
-                  <li>
-                    <p className="current-status">
-                      menu: {detailStatus.menu ? '🟢 Active' : '🔴 Sleep'}
-                    </p>
-                  </li>
-                  <li>
-                    <p className="current-status">
-                      products: {detailStatus.products ? '🟢 Active' : '🔴 Sleep'}
-                    </p>
-                  </li>
-                  <li>
-                    <p className="current-status">
-                      recipes: {detailStatus.recipes ? '🟢 Active' : '🔴 Sleep'}
-                    </p>
-                  </li>
-                </ul>
+
+              <div className={styles.dbStatusSection}>
+                <div>
+                  <p>users table: </p>
+                  <p className={styles.currentStatus}>
+                    {detailStatus.users ? '🟢 Active' : '🔴 Sleep'}
+                  </p>
+                </div>
+                <div>
+                  <p>location table: </p>
+                  <p className={styles.currentStatus}>
+                    {detailStatus.location ? '🟢 Active' : '🔴 Sleep'}
+                  </p>
+                </div>
+                <div>
+                  <p>menu table: </p>
+                  <p className={styles.currentStatus}>
+                    {detailStatus.menu ? '🟢 Active' : '🔴 Sleep'}
+                  </p>
+                </div>
+                <div>
+                  <p>products table: </p>
+                  <p className={styles.currentStatus}>
+                    {detailStatus.products ? '🟢 Active' : '🔴 Sleep'}
+                  </p>
+                </div>
+                <div>
+                  <p>recipes table: </p>
+                  <p className={styles.currentStatus}>
+                    {detailStatus.recipes ? '🟢 Active' : '🔴 Sleep'}
+                  </p>
+                </div>
               </div>
             </li>
 
             <li>
               <a href={auctionURL} target="_blank">
-                <h2 className="app-title">Auction App Built with Cursor</h2></a>
+                <h2 className={styles.appTitle}>Auction App Built with Cursor</h2></a>
               <div>
                 <p>Auction Site built with Cursor: </p>
-                <p className="current-status">
+                <p className={styles.currentStatus}>
                   🟢 Active
                 </p>
               </div>
@@ -117,10 +115,10 @@ function App() {
 
             <li>
               <a href={weatherClientURL} target="_blank">
-                <h2 className="app-title">Weather Report App</h2></a>
+                <h2 className={styles.appTitle}>Weather Report App</h2></a>
               <div>
                 <p>Weather Report Server: </p>
-                <p className="current-status">
+                <p className={styles.currentStatus}>
                   {weatherServerStatus ? '🟢 Active' : '🔴 Sleep'}
                 </p>
               </div>
@@ -128,20 +126,20 @@ function App() {
 
             <li>
               <a href={recipeFinderURL} target="_blank">
-                <h2 className="app-title">Recipe Finder App</h2></a>
+                <h2 className={styles.appTitle}>Recipe Finder App</h2></a>
               <div>
                 <p>Recipe Finder Server: </p>
-                <p className="current-status">🟢 Active</p>
+                <p className={styles.currentStatus}>🟢 Active</p>
               </div>
             </li>
 
             <li>
               <a href={spotifySearchURL} target='_blank'>
-                <h2 className="app-title">Spotify Music Search App</h2>
+                <h2 className={styles.appTitle}>Spotify Music Search App</h2>
               </a>
               <div>
                 <p>Spotify Music Search Server: </p>
-                <p className="current-status">
+                <p className={styles.currentStatus}>
                   {checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'}
                 </p>
               </div>

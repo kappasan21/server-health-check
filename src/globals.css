@@ -38,11 +38,11 @@ li {
   padding: .5rem 2rem;
 }
 
-li div {
+/* li div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
 a {
   color: var(--header-color1);
