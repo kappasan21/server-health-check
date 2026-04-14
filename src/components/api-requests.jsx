@@ -46,7 +46,7 @@ export async function checkDbStatus() {
     return false;
   }
 };
-// db-check for other servers
+// db-check for restaurant server
 export async function dbStatusCheck() {
   try {
     const response = await axios.get(restaurantSvrURL + '/db-check');

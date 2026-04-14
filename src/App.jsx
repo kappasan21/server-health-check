@@ -5,7 +5,7 @@ import {
   checkDbStatus,
   checkWeatherServerStatus,
   checkSpotifyServerStatus,
-  dbStatusCheck,
+  // dbStatusCheck,
 } from './components/api-requests';
 
 import styles from './App.module.css';
@@ -24,9 +24,8 @@ const auctionURL = "https://auction-app-m35w.vercel.app";
 function App() {
 
   const [authServerStatus, setAuthServerStatus] = useState(false);
-  const [dbStatus, setDbStatus] = useState(false);
+  // const [dbStatus, setDbStatus] = useState(false);
   const [weatherServerStatus, setWeatherServerStatus] = useState(false);
-  const [dbConnection, setDbConnection] = useState(false);
   const [detailStatus, setDetailStatus] = useState({});
   // 'users', 'location', 'menu', 'products', 'recipes'
 
@@ -44,11 +43,6 @@ function App() {
     checkWeatherServerStatus().then((status) => {
       setWeatherServerStatus(status);
     });
-    // Restaurant DB check - which is the same location with auth server
-    dbStatusCheck().then((status) => {
-      setDbConnection(status);
-    })
-
   }, []);
 
   return (
@@ -74,27 +68,39 @@ function App() {
               </div>
               <div>
                 <p>DB for Authentication Server on Supabase: </p>
-                <p className="current-status">
-                  {/* {
+                <ul>
+                  <li>
+                    <p className="current-status">
+                      {/* {
                     dbStatus
                       // || dbConnection
                       ? '🟢 Active'
                       : '🔴 Sleep'
                   } */}
-                  dbStatus: {detailStatus.users ? '🟢 Active' : '🔴 Sleep'}
-                </p>
-                <p className="current-status">
-                  location: {detailStatus.location ? '🟢 Active' : '🔴 Sleep'}
-                </p>
-                <p className="current-status">
-                  menu: {detailStatus.menu ? '🟢 Active' : '🔴 Sleep'}
-                </p>
-                <p className="current-status">
-                  products: {detailStatus.products ? '🟢 Active' : '🔴 Sleep'}
-                </p>
-                <p className="current-status">
-                  recipes: {detailStatus.recipes ? '🟢 Active' : '🔴 Sleep'}
-                </p>
+                      dbStatus: {detailStatus.users ? '🟢 Active' : '🔴 Sleep'}
+                    </p>
+                  </li>
+                  <li>
+                    <p className="current-status">
+                      location: {detailStatus.location ? '🟢 Active' : '🔴 Sleep'}
+                    </p>
+                  </li>
+                  <li>
+                    <p className="current-status">
+                      menu: {detailStatus.menu ? '🟢 Active' : '🔴 Sleep'}
+                    </p>
+                  </li>
+                  <li>
+                    <p className="current-status">
+                      products: {detailStatus.products ? '🟢 Active' : '🔴 Sleep'}
+                    </p>
+                  </li>
+                  <li>
+                    <p className="current-status">
+                      recipes: {detailStatus.recipes ? '🟢 Active' : '🔴 Sleep'}
+                    </p>
+                  </li>
+                </ul>
               </div>
             </li>
 
