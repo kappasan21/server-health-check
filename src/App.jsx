@@ -34,7 +34,7 @@ function App() {
     checkDbStatus().then((status) => {
       // setDbStatus(status);
       setDetailStatus(status);
-      console.log("DB table statuses data: ", status);
+      // console.log("DB table statuses data: ", status);
     });
     // Weather report app server status check
     checkWeatherServerStatus().then((status) => {
