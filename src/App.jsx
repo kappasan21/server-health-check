@@ -22,12 +22,9 @@ const auctionURL = "https://auction-app-m35w.vercel.app";
 
 
 function App() {
-
   const [authServerStatus, setAuthServerStatus] = useState(false);
-  // const [dbStatus, setDbStatus] = useState(false);
   const [weatherServerStatus, setWeatherServerStatus] = useState(false);
   const [detailStatus, setDetailStatus] = useState({});
-  // 'users', 'location', 'menu', 'products', 'recipes'
 
   useEffect(() => {
     // App groups with Auth server and DB status check
