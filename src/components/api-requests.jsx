@@ -30,15 +30,16 @@ export async function checkDbStatus() {
     const dbCheck = await axios.get(authURL + '/db-connection-test');
     console.log("DB check response: ", dbCheck);
     const statusData = dbCheck.data.users;
-    console.log("DB check response users table data: ", statusData);
+    console.log("DB check response 'users' table data: ", statusData);
+    // const status = dbCheck.data ? true : false;
+    // return status;
+    return statusData;
 
-    const status = dbCheck.data ? true : false;
     // if (dbCheck.data) {
     //   return true;
     // } else {
     //   return false;
     // }
-    return status;
   } catch (error) {
     console.error('Error checking db status: ', error);
     return false;

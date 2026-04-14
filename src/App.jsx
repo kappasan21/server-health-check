@@ -27,6 +27,8 @@ function App() {
   const [dbStatus, setDbStatus] = useState(false);
   const [weatherServerStatus, setWeatherServerStatus] = useState(false);
   const [dbConnection, setDbConnection] = useState(false);
+  const [detailStatus, setDetailStatus] = useState({});
+  // 'users', 'location', 'menu', 'products', 'recipes'
 
   useEffect(() => {
     // App groups with Auth server and DB status check
@@ -34,7 +36,9 @@ function App() {
       setAuthServerStatus(status);
     });
     checkDbStatus().then((status) => {
-      setDbStatus(status);
+      // setDbStatus(status);
+      setDetailStatus(status);
+      console.log("DB table statuses data: ", status);
     });
     // Weather report app server status check
     checkWeatherServerStatus().then((status) => {
@@ -71,12 +75,25 @@ function App() {
               <div>
                 <p>DB for Authentication Server on Supabase: </p>
                 <p className="current-status">
-                  {
+                  {/* {
                     dbStatus
                       // || dbConnection
                       ? '🟢 Active'
                       : '🔴 Sleep'
-                  }
+                  } */}
+                  dbStatus: {detailStatus.users ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+                <p className="current-status">
+                  location: {detailStatus.location ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+                <p className="current-status">
+                  menu: {detailStatus.menu ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+                <p className="current-status">
+                  products: {detailStatus.products ? '🟢 Active' : '🔴 Sleep'}
+                </p>
+                <p className="current-status">
+                  recipes: {detailStatus.recipes ? '🟢 Active' : '🔴 Sleep'}
                 </p>
               </div>
             </li>
@@ -128,7 +145,7 @@ function App() {
 
         {/* <a id="link-to-login" href={authURL + '/login'} target="_blank">To Login Page</a> */}
       </div >
-    </main>
+    </main >
   );
 };
 
