@@ -124,9 +124,9 @@ function App() {
 
             <li>
               <a href={recipeFinderURL} target="_blank">
-                <h2 className={styles.appTitle}>Recipe Finder App</h2></a>
+                <h2 className={styles.appTitle}>Recipe Search App</h2></a>
               <div>
-                <p>Recipe Finder Server: </p>
+                <p>Recipe Search App build with Cursor</p>
                 <p className={styles.currentStatus}>🟢 Active</p>
               </div>
             </li>
