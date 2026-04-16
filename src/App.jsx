@@ -4,7 +4,7 @@ import {
   checkAuthServerStatus,
   checkDbStatus,
   checkWeatherServerStatus,
-  checkSpotifyServerStatus,
+  // checkSpotifyServerStatus,
   // dbStatusCheck,
 } from './components/api-requests';
 
@@ -131,13 +131,14 @@ function App() {
             </li>
 
             <li>
-              <a href={spotifySearchURL} target='_blank'>
+              <a href={spotifySearchURL} target='_blank' className={styles.spotifySearchLink}>
                 <h2 className={styles.appTitle}>Spotify Music Search App</h2>
               </a>
               <div>
                 <p>Spotify Music Search Server: </p>
                 <p className={styles.currentStatus}>
-                  {checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'}
+                  {/* {checkSpotifyServerStatus ? '🟢 Active' : '🔴 Sleep'} */}
+                  ⚫ No More API Service...
                 </p>
               </div>
             </li>

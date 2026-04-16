@@ -48,3 +48,9 @@
   align-items: center;
   margin: .2rem auto;
 }
+
+.spotifySearchLink {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
