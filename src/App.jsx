@@ -16,7 +16,8 @@ import styles from './App.module.css';
 // const authURL = 'http://localhost:3111';
 const authURL = "https://auth-server-g01-0-9.onrender.com";
 const weatherClientURL = "https://weather-report-api-client.netlify.app";
-const recipeFinderURL = "https://iridescent-chebakia-845fb8.netlify.app";
+// const recipeFinderURL = "https://iridescent-chebakia-845fb8.netlify.app";
+const recipeFinderURL = "https://quick-recipe-type2.vercel.app";
 const spotifySearchURL = "https://spotify-search-client.netlify.app";
 const auctionURL = "https://auction-app-m35w.vercel.app";
 
